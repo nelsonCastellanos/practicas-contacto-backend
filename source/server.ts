@@ -1,7 +1,7 @@
 import express, { Application } from 'express'
 import routes from './api/routes'
-
-
+import dbInit from './db/init';
+import cors from 'cors';
 
 class Server {
     public app: express.Application;
@@ -9,12 +9,14 @@ class Server {
     constructor(){
         this.app = express();
         this.config();
+        this.routes();
     }
 
     public config():void{
         this.app.set("port", process.env.PORT || 3000);
         this.app.use(express.json());
         this.app.use(express.urlencoded({extended: false}))
+        this.app.use(cors());
     }
 
     public routes():void {
@@ -27,5 +29,6 @@ class Server {
         });
     }
 }
+// dbInit();
 const server = new Server();
 server.start();

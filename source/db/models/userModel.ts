@@ -8,7 +8,7 @@ export interface UserAttributes {
     password: string;
 }
 
-export interface UserInput extends Optional<UserAttributes, 'id' | 'email'> {}
+export interface UserInput extends Optional<UserAttributes, 'id'> {}
 export interface UserOutput extends Required<UserAttributes> {}
 
  
@@ -41,12 +41,12 @@ UserModel.init({
     },
     password: {
         type: DataTypes.STRING,
-        allowNull: false,
-        unique: true
+        allowNull: false
     }}, {
         timestamps: true,
         sequelize: sequelizeConnection,
-        paranoid: true
+        paranoid: true,
+        tableName: 'users'
     }
 )
 

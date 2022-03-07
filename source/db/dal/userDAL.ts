@@ -27,6 +27,16 @@ export const getById = async (id: number): Promise<UserOutput> => {
     return user
 }
 
+
+export const getByEmail = async (email: string): Promise<UserOutput> => {
+    const user = await UserModel.findOne({where: {email: email}})
+    if (!user) {
+        // @todo throw custom error
+        throw new Error('not found')
+    }
+    return user
+}
+
 export const deleteById = async (id: number): Promise<boolean> => {
     const deleted = await UserModel.destroy({
         where: {id}

@@ -10,6 +10,7 @@ export class LibraryRouter{
 
   constructor(){
     this.router = Router();
+    this.routes();
   }
 
   routes(){
