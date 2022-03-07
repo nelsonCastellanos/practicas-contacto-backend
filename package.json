@@ -1,0 +1,30 @@
+{
+  "name": "carvajal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "source/server.ts",
+  "scripts": {
+    "dev": "nodemon source/server.ts",
+    "build": "rm -rf build/ && prettier --write source/ && tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15",
+    "passport": "^0.5.2",
+    "sequelize": "^6.17.0",
+    "ts-node": "^10.6.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.13",
+    "@types/mysql": "^2.15.21",
+    "@types/node": "^17.0.21"
+  }
+}
