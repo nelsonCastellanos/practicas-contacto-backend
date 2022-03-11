@@ -9,6 +9,7 @@ export interface LibraryAttributes {
     phone: string;
     cell_phone: string;
     address: string;
+    user_id: number;
 }
 
 export interface LibraryInput extends Optional<LibraryAttributes, 'id' | 'email'> {}
@@ -23,6 +24,7 @@ class Library extends Model<LibraryAttributes, LibraryInput> implements LibraryA
     public phone!: string;
     public cell_phone!: string;
     public address!: string;
+    public user_id!: number;
   
     // timestamps!
     public readonly createdAt!: Date;
@@ -60,6 +62,13 @@ Library.init({
     address: {
         type: DataTypes.STRING,
         allowNull: true
+    },
+    user_id:{
+        type: DataTypes.INTEGER.UNSIGNED,
+        references:{
+            model: 'users',
+            key: 'id'
+        }
     }
     }, {
         timestamps: true,

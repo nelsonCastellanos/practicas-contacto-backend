@@ -5,4 +5,5 @@ export interface CreateLibraryDTO {
     phone: string;
     cell_phone: string;
     address: string;
+    user_id: number;
 }

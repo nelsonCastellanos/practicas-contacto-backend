@@ -38,15 +38,19 @@ export class LibraryRouter{
     })
     
     this.router.post('/', async (req: Request, res: Response) => {
+      const userId = res.locals.jwtPayload.userId
       const payload:CreateLibraryDTO = req.body
+      payload.user_id = userId;
       const result = await this.controller.create(payload)
       return res.status(200).send(result)
     })
     
     this.router.get('/', async (req: Request<{},{},{},GetAllModelFilters>, res: Response) => {
-      const filters:GetAllModelFilters = req.query
-      const results = await this.controller.getAll(filters)
+      const userId = res.locals.jwtPayload.userId
+      const results = await this.controller.getAllByUser(userId);
       return res.status(200).send(results)
     })
+
+    
   }
 }

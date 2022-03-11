@@ -42,3 +42,11 @@ export const getAll = async (filters?: GetAllModelFilters): Promise<LibraryOutpu
         ...((filters?.isDeleted || filters?.includeDeleted) && {paranoid: true})
     })
 }
+
+export const getAllByUser = async (userId: number): Promise<LibraryOutput[]> => {
+    return Library.findAll({
+        where: {
+            user_id: userId
+        }
+    })
+}

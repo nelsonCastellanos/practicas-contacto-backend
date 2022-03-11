@@ -1,7 +1,7 @@
 import * as dal from '../../db/dal/userDAL'
 import {GetAllModelFilters} from '../../db/dal/types'
 import { UserInput, UserOutput } from '../../db/models/userModel'
-import PasswordHash from '../../services/utils/password'
+import PasswordHash from '../../configs/utils/password'
 
 export const create = async(payload: UserInput): Promise<UserOutput> => {
     await PasswordHash.cryptPassword(payload.password, async(error:Error, hash:string)=>{

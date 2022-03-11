@@ -8,6 +8,7 @@ export const toLibrary = (library: LibraryOutput): LibraryAttributes => {
         email: library.email,
         phone: library.phone,
         cell_phone: library.cell_phone,
-        address: library.address
+        address: library.address,
+        user_id: library.user_id
     }
 }

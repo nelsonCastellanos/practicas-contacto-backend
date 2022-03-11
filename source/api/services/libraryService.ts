@@ -17,3 +17,7 @@ export const deleteById = (id: number): Promise<boolean> => {
 export const getAll = (filters: GetAllModelFilters): Promise<LibraryOutput[]> => {
     return library.getAll(filters)
 }
+
+export const getAllByUser = (userId:number): Promise<LibraryOutput[]> => {
+    return library.getAllByUser(userId)
+}

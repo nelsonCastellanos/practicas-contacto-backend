@@ -26,7 +26,7 @@ class Server {
     public start():void{
         this.app.listen(this.app.get("port"), () => {
             console.log(`Server running`)
-        });
+        }).on('error', function(err) { console.error(err)});;
     }
 }
 // dbInit();

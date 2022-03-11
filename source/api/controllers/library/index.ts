@@ -27,4 +27,10 @@ export class LibraryController{
     public async getAll (filters: GetAllModelFilters): Promise<LibraryAttributes[]>{
         return (await service.getAll(filters)).map(mapper.toLibrary)
     }
+
+    public async getAllByUser(userId: number): Promise<LibraryAttributes[]>{
+        return (await service.getAllByUser(userId)).map(mapper.toLibrary)
+    }
+
+    
 }
