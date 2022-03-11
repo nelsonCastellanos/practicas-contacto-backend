@@ -9,12 +9,16 @@ Install dependence's
 npm i
 ```
 
+Run migrations `Requires database called carvajal`
+```
+npm  run migrate
+```
+
 Run
 ```
 npm run dev
 ```
 
 TODO:
-* MIGRATION COMMAND
 * UNIT TEST!
 * INTEGRATION TEST!

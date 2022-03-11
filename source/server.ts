@@ -1,6 +1,5 @@
 import express, { Application } from 'express'
 import routes from './api/routes'
-import dbInit from './db/init';
 import cors from 'cors';
 
 class Server {
@@ -29,6 +28,5 @@ class Server {
         }).on('error', function(err) { console.error(err)});;
     }
 }
-// dbInit();
 const server = new Server();
 server.start();
